@@ -5,12 +5,12 @@ import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
 @Data
-@Entity
+@Entity(name = "seat_type_shows")
 public class SeatTypeShow extends BaseModel {
 
     private SeatType seatType;
     @ManyToOne
-    private MyShow myShow;
+    private Show show;
     private double price;
 
 }

@@ -7,13 +7,13 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-@Entity
-public class MyShow extends BaseModel {
+@Entity(name = "shows")
+public class Show extends BaseModel {
 
+    private Date startTime;
     @ManyToOne
     private Screen screen;
     @ManyToOne
     private Movie movie;
-    private Date startTime;
 
 }
