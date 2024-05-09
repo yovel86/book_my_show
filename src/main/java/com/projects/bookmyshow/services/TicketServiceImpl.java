@@ -52,7 +52,7 @@ public class TicketServiceImpl implements TicketService {
 
         Show show = this.showRepository.findById(showId).orElseThrow(() -> new InvalidBookTicketRequestException("Invalid Show"));
 
-        List<ShowSeat> showSeats = this.showSeatRepository.findShowSeatByIdInAndSeatStatus_AvailableAndShow(showSeatIds, show);
+        List<ShowSeat> showSeats = null; //this.showSeatRepository.findShowSeatByIdInAndSeatStatus_AvailableAndShow(showSeatIds, show);
 
         if(showSeats.size() != showSeatIds.size()) {
             throw new SeatsUnavailableException("Some of the seats you are trying to book are not available");
@@ -72,5 +72,7 @@ public class TicketServiceImpl implements TicketService {
 
         return ticketRepository.save(ticket);
     }
+
+
 
 }

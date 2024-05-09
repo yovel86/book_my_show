@@ -1,5 +1,8 @@
 package com.projects.bookmyshow.dtos;
 
+import lombok.Data;
+
+@Data
 public class Response {
 
     private ResponseStatus responseStatus;
